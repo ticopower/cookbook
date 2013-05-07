@@ -1,7 +1,7 @@
-# Grupo
-- 123456 David Martinho
-- 123456 David Martinho
-- 123456 David Martinho
+﻿# Grupo
+- 21105163 André Grãos
+- 123456 Leandro Dias
+- 123456 João Gouveia
 - 123456 David Martinho
 
 ## Changelog
