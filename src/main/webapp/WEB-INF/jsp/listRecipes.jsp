@@ -9,7 +9,7 @@
 <body>
 <ul>
 <c:forEach var="item" items='${items}'>
-	<li><c:out value="${item}"></c:out></li>
+	<li>Receita <c:out value="${item}"></c:out></li>
 </c:forEach>
 </ul>
 </body>

@@ -9,9 +9,8 @@
 <body>
 <ul>
 <c:forEach var="item" items='${items}'>
-	<li><c:out value="${item}"></c:out></li>
+	<li>Receita detalhada<c:out value="${item}"></c:out></li>
 </c:forEach>
 </ul>
-<img src="/static/cookbook.png" />
 </body>
 </html>
