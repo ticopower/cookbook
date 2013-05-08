@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Recipe ${recipe.id}</title>
+
 </head>
 <body>
 	<h1>${recipe.titulo}</h1>

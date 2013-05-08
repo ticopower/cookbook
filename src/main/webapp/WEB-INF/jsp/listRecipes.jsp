@@ -4,13 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Recipes</title>
+<title>Recipe List</title>
 </head>
 <body>
-<ul>
-<c:forEach var="item" items='${items}'>
-	<li>Receita <c:out value="${item}"></c:out></li>
+<c:forEach var="recipe" items='${Recipes}'>
+	<a href="/recipes/${recipe.id}">${recipe.titulo}</a><br/>
 </c:forEach>
-</ul>
 </body>
 </html>
