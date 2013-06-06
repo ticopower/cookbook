@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Recipe ${recipe.id}</title>
+<title>Recipe ${recipe.oid}</title>
 
 </head>
 <body>
@@ -13,5 +13,10 @@
 	<p>${recipe.problema}</p>
 	<b>Solucao:</b>
 	<p>${recipe.solucao}</p>
+	<b>Tags:</b>
+	<c:forEach var="tag" items='${tag}'>
+	${tag.tag}
+	
+</c:forEach>
 </body>
 </html>

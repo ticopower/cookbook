@@ -8,7 +8,8 @@
 </head>
 <body>
 <c:forEach var="recipe" items='${Recipes}'>
-	<a href="/recipes/${recipe.id}">${recipe.titulo}</a><br/>
+	<a href="/recipes/${recipe.oid}">${recipe.titulo}</a><br/>
+	<a href="/recipes/delete/${recipe.oid}">Apagar Receita</a><br/>
 </c:forEach>
 </body>
 </html>
