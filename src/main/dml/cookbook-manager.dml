@@ -11,6 +11,8 @@ class Recipe {
 	 String titulo;
 	 String problema;
 	 String solucao;
+	 String autor;
+	 DateTime creationTimestamp;
 }
 
 

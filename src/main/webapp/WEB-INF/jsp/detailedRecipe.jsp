@@ -13,10 +13,15 @@
 	<p>${recipe.problema}</p>
 	<b>Solucao:</b>
 	<p>${recipe.solucao}</p>
+	<b>Ator:</b>
+	<p>${recipe.autor}</p>
+	<b>Data de Criação:</b>
+	<p>${recipe.creationTimestamp}</p>
 	<b>Tags:</b>
 	<c:forEach var="tag" items='${tag}'>
-	${tag.tag}
+	${tag.tag}</b>
 	
 </c:forEach>
+<a href="/recipes/delete/${recipe.oid}">Apagar Receita</a><br/>	
 </body>
 </html>

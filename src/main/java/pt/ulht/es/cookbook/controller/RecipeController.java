@@ -57,10 +57,11 @@ public class RecipeController {
     	String problema = params.get("problema");
     	String solucao = params.get("solucao");
     	String tag = params.get("tag");
+    	String autor = params.get("autor");
     	String idrecipe;
     	
     	
-    	Recipe recipe = new Recipe(titulo, problema, solucao);
+    	Recipe recipe = new Recipe(titulo, problema, solucao, autor);
     	
     	if (tag.contains(",")){
     		List<String> ListTag = new ArrayList<String>(Arrays.asList(tag.split(",")));
@@ -102,7 +103,31 @@ public class RecipeController {
 		CookbookManager.getInstance().removeRecipe(recipe);
 		return "redirect:/recipes/";
    }
-        
+   @RequestMapping (method = RequestMethod.POST, value = "/recipes/search")
+	public String searchRecipe (Model model,@RequestParam Map<String,String>params){
+		String procurar;
+		List<Recipe> RecipeList = new ArrayList<Recipe>(CookbookManager.getInstance().getRecipeSet());
+		List<Recipe> ProcuraList =new ArrayList<Recipe>();
+		
+		procurar=params.get("procura");
+		
+		for (int a=0;a<RecipeList.size();a++){
+			if(RecipeList.get(a).getTitle().contains(procurar) ||RecipeList.get(a).getSolution().contains(procurar)||RecipeList.get(a).getProblem().contains(procurar)){
+				ProcuraList.add(RecipeList.get(a));
+			}
+			
+		}
+		model.addAttribute("receitaencontrada",ProcuraList);
+		return "receitaencontrada";
+		
+		
+		}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/recipes/search")
+	public String searchRecipe() {
+		return "procurareceita";
+		
+	}
     
     
 }

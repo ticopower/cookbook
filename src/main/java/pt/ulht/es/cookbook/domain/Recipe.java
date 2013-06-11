@@ -2,6 +2,8 @@ package pt.ulht.es.cookbook.domain;
 
 import java.util.Comparator;
 
+import org.joda.time.DateTime;
+
 
 
 
@@ -25,12 +27,14 @@ public class Recipe extends Recipe_Base{
 	}
 
 
-	public Recipe(String titulo, String problema, String solucao) {
+	public Recipe(String titulo, String problema, String solucao, String autor) {
 		setCookbookManager(CookbookManager.getInstance());
 
 		setTitulo(titulo);
 		setProblema(problema);
 		setSolucao(solucao);
+		setAutor (autor);
+		setCreationTimestamp(new DateTime());
 		
 	}
 	public void delete() {
@@ -41,27 +45,20 @@ public class Recipe extends Recipe_Base{
 		super.deleteDomainObject();
 	}
 
-/*	public String getTitulo() {
-		return titulo;
+	public String getTitle() {
+		return getTitulo();
 	}
 	
-	public String getProblema() {
-		return problema;
+	public String getProblem() {
+		return getProblema();
 	}
 	
-	public String getSolucao() {
-		return solucao;
+	public String getSolution() {
+		return getSolucao();
 		
 	}
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		
-	}*/
+	
 	public void addTag(String TagText) {
 		addTag(new Tag(TagText));
 	}
